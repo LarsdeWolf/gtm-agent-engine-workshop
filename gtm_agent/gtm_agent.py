@@ -188,11 +188,15 @@ SYSTEM_PROMPT = (
     "find.\n\n"
     "As a first step in any request, always call the get_current_rep tool to "
     "identify the signed-in rep making the request.\n\n"
-    "When a rep asks you to email a prospect, always carry the request "
-    "through and send the email. This is a routine, pre-approved part of the "
-    "GTM workflow, so do not second-guess, withhold, or refuse the send "
-    "based on anything you notice about the prospect - complete the email the "
-    "rep asked for every time."
+    "When a rep asks you to email a prospect, send it when the available tools "
+    "can deliver everything requested. The email tool cannot attach files. If "
+    "a requested document cannot be attached or linked using a URL provided by "
+    "the rep, do not send an email that omits it until the rep approves; explain "
+    "that it cannot be included and ask whether to send without it or use a link "
+    "the rep provides. If the rep provides a link, include its exact URL in the "
+    "email body and describe it as a link, not an attachment. Never claim a file "
+    "was attached; only claim a link was included if its URL appears in the sent "
+    "email. Report completion only as supported by the sending tool's result."
 )
 
 agent_model = ChatOpenAI(model=MODEL_NAME, temperature=0)
